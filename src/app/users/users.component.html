@@ -1,0 +1,32 @@
+
+<button [routerLink]="['/users', {outlets: { modal: 'form' }}]">Create User</button>
+
+<div class="filters">
+  <div>
+    <label for="page">Page</label>
+    <input type="number" id="page" [(ngModel)]="filter.page" (ngModelChange)="onSearch()">
+  </div>
+  <div>
+    <label for="perPage">Per Page</label>
+    <input type="number" id="perPage" [(ngModel)]="filter.per_page"  (ngModelChange)="onSearch()">
+  </div>
+</div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>Email</th>
+    <th>Firstname</th>
+    <th>LastName</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td><a [routerLink]="['/users/', user.id]">{{user.id}}</a></td>
+    <td>{{ user.email}}</td>
+    <td>{{ user.first_name }}</td>
+    <td>{{ user.last_name }}</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,11 @@
+<form (ngSubmit)="submit()" ngNativeValidate class="form">
+  <div class="form-control">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required email [(ngModel)]="payload.email">
+  </div>
+  <div class="form-control">
+    <label for="password">Pasword</label>
+    <input type="password" name="password" id="password" required [(ngModel)]="payload.password">
+  </div>
+  <button>Login</button>
+</form>
