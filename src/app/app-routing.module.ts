@@ -10,9 +10,9 @@ export const routes: Routes = [
   },
   {
     path: 'users',
-    canLoad: [
-      () => inject(AuthService).isAuth
-    ],
+    // canLoad: [
+    //   () => inject(AuthService).isAuth
+    // ],
     loadChildren: () => import('./users/users.module').then(c => c.UsersModule)
   },
   {

@@ -1,4 +1,4 @@
-import {inject, Injectable} from '@angular/core';
+import {Inject, inject, Injectable} from '@angular/core';
 import {API_URL} from './common/token';
 import {HttpClient} from '@angular/common/http';
 import {tap} from 'rxjs';

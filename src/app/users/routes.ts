@@ -14,7 +14,8 @@ export const usersRoutes: Routes = [
       {
         path: ':id',
         // component: UserDetailComponent
-        loadComponent: () => import('../user-detail/user-detail.component').then(c => c.UserDetailComponent)
+        loadComponent: () => import('../user-detail/user-detail.component').then(c => c.UserDetailComponent),
+        outlet: 'modal'
       },
       {
         path: '',
