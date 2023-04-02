@@ -17,15 +17,16 @@ export class LoginComponent {
   router = inject(Router);
 
   payload = {
-    email: '',
-    password: ''
+    email: 'eve.holt@reqres.in',
+    password: 'cityslicka'
   };
 
   submit() {
     this.authService.login(this.payload).subscribe({
       next: response => {
-        this.authService.setToken(response.token)
-        this.router.navigate(['/users/']);
+        this.authService.setToken(response.token);
+        const url = this.authService.redirectUri;
+        this.router.navigate([url ? url : '/users/']);
       }
     })
   }

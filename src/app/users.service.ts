@@ -16,4 +16,8 @@ export class UsersService {
       map(res => res.data)
     )
   }
+
+  getUser(userId: string) {
+    return this.httpClient.get<any>(`${this.apiUrl}users/${userId}`, )
+  }
 }

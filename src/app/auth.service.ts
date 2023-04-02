@@ -13,6 +13,7 @@ export class AuthService {
   private httpClient = inject(HttpClient);
 
   isAuth = false;
+  redirectUri: string|undefined;
 
   constructor() {
     if (!!localStorage.getItem(TOKEN_KEY)) {
